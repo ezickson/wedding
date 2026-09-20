@@ -1,0 +1,8 @@
+{
+  "name": "Noah & Abby Wedding",
+  "description": "Wedding celebration website for Noah Ezickson & Abigail Bergeron at Wychmere Beach Club, Harwich Port, Cape Cod, Massachusetts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

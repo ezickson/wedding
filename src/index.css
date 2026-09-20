@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+    color: #273746;
+    background-color: #faf8f5;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-script {
+    font-family: 'Alex Brush', 'Pinyon Script', cursive;
+  }
+
+  .font-formal-script {
+    font-family: 'Pinyon Script', 'Alex Brush', cursive;
+  }
+}
+
+/* Custom Cape Cod Coastal Watercolor Stripes matching Save the Date */
+.coastal-stripes-left {
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 12px,
+    rgba(122, 155, 187, 0.45) 12px,
+    rgba(122, 155, 187, 0.55) 20px,
+    rgba(151, 181, 209, 0.3) 20px,
+    rgba(151, 181, 209, 0.4) 28px,
+    transparent 28px,
+    transparent 36px
+  );
+}
+
+.coastal-linen {
+  background-color: #faf7f2;
+  background-image: radial-gradient(#e7ded2 0.75px, transparent 0.75px), radial-gradient(#e7ded2 0.75px, #faf7f2 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
