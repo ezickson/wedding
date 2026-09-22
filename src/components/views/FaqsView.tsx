@@ -4,18 +4,15 @@ import { FaqItem } from '../../types';
 import { ChevronDown, ChevronUp, Search } from 'lucide-react';
 
 export const FaqsView: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0); // First expanded by default
 
-  const categories = ['All', 'Schedule & Attire', 'Travel & Lodging', 'Invitations & Meals', 'General'];
-
   const filteredFaqs = FAQS.filter((faq) => {
-    const matchesCat = activeCategory === 'All' || faq.category === activeCategory;
-    const matchesSearch =
+    if (!searchQuery.trim()) return true;
+    return (
       faq.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      faq.answer.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCat && matchesSearch;
+      faq.answer.toLowerCase().includes(searchQuery.toLowerCase())
+    );
   });
 
   const toggleAccordion = (idx: number) => {
@@ -37,51 +34,31 @@ export const FaqsView: React.FC = () => {
         </p>
       </div>
 
-      {/* Search & Category Filter */}
-      <div className="space-y-3 sm:space-y-4">
-        {/* Search input */}
-        <div className="relative max-w-md mx-auto">
-          <Search className="w-4 h-4 text-[#758eac] absolute left-3.5 top-1/2 -translate-y-1/2" />
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search questions (e.g., dress code, parking)..."
-            className="w-full pl-9 sm:pl-10 pr-4 py-2 sm:py-2.5 rounded-full bg-white/90 border border-[#ded4be] text-xs text-[#2b4055] placeholder-[#8098af] focus:outline-none focus:ring-2 focus:ring-[#4a6b8c] shadow-2xs"
-          />
-          {searchQuery && (
-            <button
-              onClick={() => setSearchQuery('')}
-              className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs text-[#8299af] hover:text-[#2a3e54]"
-            >
-              Clear
-            </button>
-          )}
-        </div>
-
-        {/* Categories - horizontal scroll on mobile */}
-        <div className="flex items-center sm:justify-center gap-1.5 overflow-x-auto pb-1 scrollbar-none -mx-3 px-3 sm:mx-0 sm:px-0">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`shrink-0 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-xs uppercase tracking-wider font-medium transition-colors ${
-                activeCategory === cat
-                  ? 'bg-[#4a6b8c] text-white'
-                  : 'bg-white/80 hover:bg-[#f2ece0] text-[#50687e] border border-[#dcd3bd]'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
+      {/* Search Bar */}
+      <div className="relative max-w-md mx-auto">
+        <Search className="w-4 h-4 text-[#758eac] absolute left-3.5 top-1/2 -translate-y-1/2" />
+        <input
+          type="text"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder="Search questions (e.g., dress code, parking)..."
+          className="w-full pl-9 sm:pl-10 pr-4 py-2 sm:py-2.5 rounded-full bg-white/90 border border-[#ded4be] text-xs text-[#2b4055] placeholder-[#8098af] focus:outline-none focus:ring-2 focus:ring-[#4a6b8c] shadow-2xs"
+        />
+        {searchQuery && (
+          <button
+            onClick={() => setSearchQuery('')}
+            className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs text-[#8299af] hover:text-[#2a3e54]"
+          >
+            Clear
+          </button>
+        )}
       </div>
 
       {/* FAQ Accordion List */}
       <div className="space-y-2.5 sm:space-y-3">
         {filteredFaqs.length === 0 ? (
           <div className="text-center py-8 sm:py-12 bg-white/70 rounded-2xl border border-[#ded5be] p-4 sm:p-6 text-xs text-[#637d96]">
-            No matching questions found. Try searching a different keyword or contact us directly below!
+            No matching questions found. Try searching a different keyword!
           </div>
         ) : (
           filteredFaqs.map((faq, index) => {

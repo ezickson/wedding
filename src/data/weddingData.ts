@@ -109,6 +109,7 @@ export interface SuggestedAccommodation {
   address?: string;
   website: string;
   notes?: string;
+  highlight?: string;
 }
 
 export const ROOM_BLOCK_HOTELS: RoomBlockItem[] = [
@@ -136,8 +137,8 @@ export const ROOM_BLOCK_HOTELS: RoomBlockItem[] = [
     address: '707 Iyannough Road, Hyannis, MA 02601',
     phone: '(508) 775-6600',
     website: 'https://www.marriott.com/en-us/hotels/hyacy-courtyard-cape-cod-hyannis/overview/',
-    shuttlePickup: true,
-    notes: 'Saturday wedding shuttles will pick up and drop off here.',
+    shuttlePickup: false,
+    notes: '~10min from Uncommoner where shuttles will pick up and drop off.',
   },
 ];
 
@@ -150,20 +151,22 @@ export const SUGGESTED_ACCOMMODATIONS: SuggestedAccommodation[] = [
     notes: 'Great for groups and families looking for private cottage or home rentals on the Lower Cape.',
   },
   {
-    name: 'Winstead Inn',
-    type: 'Boutique Inn',
+    name: 'The Kingfisher Harwich Port',
+    type: 'Boutique Coastal Hotel',
     town: 'Harwich Port, MA',
-    address: '114 Parallel Street, Harwich Port, MA 02646',
-    website: 'https://winsteadinn.com',
-    notes: 'Classic boutique inn situated right in Harwich Port.',
+    address: '1 Braddock Street, Harwich Port, MA 02646',
+    website: 'https://kingfisherharwichport.com',
+    highlight: 'Just down the road from our venue!',
+    notes: 'A relaxed, stylish coastal boutique hotel in Harwich Port, just minutes from Nantucket Sound beaches.',
   },
   {
-    name: 'The Commodore Inn',
-    type: 'Boutique Inn',
-    town: 'West Harwich, MA',
-    address: '30 Earle Road, West Harwich, MA 02671',
-    website: 'https://commodoreinn.com',
-    notes: 'Relaxed coastal stay just steps from Nantucket Sound beaches.',
+    name: 'Winstead Beach Resort',
+    type: 'Beachfront Resort & Inn',
+    town: 'Harwich Port, MA',
+    address: '4 Kimball Way, Harwich Port, MA 02646',
+    website: 'https://winsteadinn.com/beach-resort/',
+    highlight: 'Just down the road from our venue!',
+    notes: 'Classic Cape Cod oceanfront retreat featuring private beach access in Harwich Port.',
   },
   {
     name: 'Pelham House Resort',
@@ -203,8 +206,8 @@ export const HOTEL_OPTIONS: HotelOption[] = [
     address: '707 Iyannough Road, Hyannis, MA 02601',
     phone: '(508) 775-6600',
     website: 'https://www.marriott.com/en-us/hotels/hyacy-courtyard-cape-cod-hyannis/overview/',
-    description: 'Room block reserved. Saturday wedding shuttle provided.',
-    shuttleProvided: true,
+    description: 'Room block reserved. ~10min from Uncommoner where shuttles will pick up and drop off.',
+    shuttleProvided: false,
   },
 ];
 

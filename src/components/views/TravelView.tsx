@@ -57,14 +57,26 @@ export const TravelView: React.FC = () => {
                   Scheduled Buses run every hour from Logan to Barnstable (~5min from our room blocks, ~20min from Harwich):
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white border border-[#ded5be] text-[11px] font-medium text-[#2d455e]">
-                    <Bus className="w-3 h-3 text-[#4a6b8c]" />
-                    Plymouth & Brockton
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white border border-[#ded5be] text-[11px] font-medium text-[#2d455e]">
-                    <Bus className="w-3 h-3 text-[#4a6b8c]" />
-                    Peter Pan Bus Lines
-                  </span>
+                  <a
+                    href="https://www.p-b.com/bus-routes/hyannis-to-logan-bus/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white hover:bg-[#f5efe3] border border-[#ded5be] hover:border-[#cfbe9e] text-[11px] sm:text-xs font-medium text-[#2d455e] hover:text-[#182d42] transition-colors shadow-2xs group"
+                  >
+                    <Bus className="w-3.5 h-3.5 text-[#4a6b8c] group-hover:scale-105 transition-transform" />
+                    <span>Plymouth & Brockton</span>
+                    <ExternalLink className="w-3 h-3 text-[#7e95ab] ml-0.5" />
+                  </a>
+                  <a
+                    href="https://peterpanbus.com/routes/logan-to-hyannis-bus/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white hover:bg-[#f5efe3] border border-[#ded5be] hover:border-[#cfbe9e] text-[11px] sm:text-xs font-medium text-[#2d455e] hover:text-[#182d42] transition-colors shadow-2xs group"
+                  >
+                    <Bus className="w-3.5 h-3.5 text-[#4a6b8c] group-hover:scale-105 transition-transform" />
+                    <span>Peter Pan Bus Lines</span>
+                    <ExternalLink className="w-3 h-3 text-[#7e95ab] ml-0.5" />
+                  </a>
                 </div>
               </div>
             </div>
@@ -217,6 +229,12 @@ export const TravelView: React.FC = () => {
                   <div className="text-xs text-[#637d94]">
                     {place.town}
                   </div>
+                  {place.highlight && (
+                    <div className="inline-flex items-center gap-1 text-[10px] font-medium text-[#2d4d6b] bg-[#e4eef6] border border-[#c6daec] px-2 py-0.5 rounded-md mt-1">
+                      <MapPin className="w-2.5 h-2.5 text-[#4a6b8c] shrink-0" />
+                      <span>{place.highlight}</span>
+                    </div>
+                  )}
                   {place.notes && (
                     <p className="text-xs text-[#50687d] leading-relaxed pt-1">
                       {place.notes}
