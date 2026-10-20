@@ -279,7 +279,7 @@ export const RsvpView: React.FC<RsvpViewProps> = ({ rsvpPublished, onToggleFeatu
           <div className="bg-[#faf7f2] rounded-xl p-3.5 sm:p-4 border border-[#eee4d2] text-xs text-[#526b83] space-y-1.5 max-w-md mx-auto text-left">
             <div className="font-semibold text-[#253b51] text-center mb-1">Helpful Travel & Timing Tips:</div>
             <p>• <strong>Cape Cod Traffic:</strong> If driving down Friday, cross the Bourne or Sagamore bridges before 2:00 PM or after 7:00 PM.</p>
-            <p>• <strong>Accommodations:</strong> Check out our room blocks at The Uncommoner, Freebird Lodge, and Courtyard Marriott.</p>
+            <p>• <strong>Accommodations:</strong> Check out our room blocks at The Uncommoner and Freebird Lodge.</p>
             <p>• <strong>Schedule:</strong> See below for complete weekend event timing and locations.</p>
           </div>
 

@@ -87,7 +87,7 @@ export const FaqsView: React.FC = () => {
                 </button>
 
                 {isExpanded && (
-                  <div className="px-3.5 sm:px-6 pb-4 sm:pb-6 pt-1 text-xs sm:text-sm text-[#4c657d] leading-relaxed border-t border-[#f2ebe0]">
+                  <div className="px-3.5 sm:px-6 pb-4 sm:pb-6 pt-1 text-xs sm:text-sm text-[#4c657d] leading-relaxed border-t border-[#f2ebe0] whitespace-pre-line">
                     {faq.answer}
                   </div>
                 )}

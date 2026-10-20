@@ -14,9 +14,17 @@ export interface WeddingEvent {
   address: string;
   attire: string;
   attireDescription: string;
+  attireMen?: string;
+  attireWomen?: string;
   description: string;
   mapUrl: string;
   note?: string;
+  transportationNote?: {
+    title: string;
+    description: string;
+    voucherUrl?: string;
+    voucherCode?: string;
+  };
 }
 
 export interface GuestPartyMember {
@@ -79,4 +87,17 @@ export interface PhotoItem {
   alt: string;
   caption: string;
   category: 'beach' | 'harbor' | 'venue' | 'moments';
+}
+
+export interface ExploreItem {
+  id: string;
+  category: 'activity' | 'dining';
+  tag: string;
+  title: string;
+  description: string;
+  subDescription?: string;
+  location?: string;
+  link?: string;
+  linkText?: string;
+  note?: string;
 }
